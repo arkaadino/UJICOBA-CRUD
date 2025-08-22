@@ -59,7 +59,7 @@ app.post('/siswa', (req, res) => {
 app.put('/siswa/:id', (req, res) => {
     const { nama_siswa, alamat, tgl_siswa, jurusan_siswa } = req.body
     connection.query(
-        'UPDATE siswa SET nama_siswa = ?, alamat = ?, tgl_siswa = ?, jurusan_siswa = ? WHERE kode = ?',
+        'UPDATE siswa SET nama_siswa = ?, alamat = ?, tgl_siswa = ?, jurusan_siswa = ? WHERE kode = ?' 
         [nama_siswa, alamat, tgl_siswa, jurusan_siswa, req.params.id],
         (err, results) => {
             if (err) return res.status(500).json({ error: err.message })
